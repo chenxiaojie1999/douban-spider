@@ -146,15 +146,14 @@ def saveData2DB(datalist, dbpath):
                 continue
             data[index] = '"'+data[index]+'"'
         sql = '''
-            insert into movie250(
-            info_link,pic_link,cname,ename,score,rated,instroduction,info
-            value(%s)'''%",".join(data)
-        print(sql)
-        # cur.execute(sql)
+            insert into movie250 (
+            info_link,pic_link,cname,ename,score,rated,instroduction,info)
+            values(%s)'''%",".join(data)
+        # print(sql)
+        cur.execute(sql)
         conn.commit()
     cur.close()
     conn.close()
-
 
 def init_db(dbpath):
     sql = '''
