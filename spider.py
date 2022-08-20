@@ -155,7 +155,6 @@ def saveData2DB(datalist, dbpath):
     cur.close()
     conn.close()
 
-
 def init_db(dbpath):
     sql = '''
         create table movie250
